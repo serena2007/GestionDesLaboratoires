@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import db from './db.js';
 
+const cors = require('cors');
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -218,3 +219,60 @@ app.delete('/annuler-reservation/:id', (req, res) => {
   });
 });
 
+// ROUTE : Valider une réservation et générer un ticket
+app.post('/valider-reservation', (req, res) => {
+    const { id_reservation, id_responsable } = req.body;
+
+    // 1. Mettre à jour le statut de la réservation
+    const sqlUpdate = "UPDATE reservations SET statut = 'validee' WHERE id_reservation = ?";
+    
+    db.query(sqlUpdate, [id_reservation], (err, result) => {
+        if (err) return res.status(500).json({ error: err.message });
+
+        // 2. Générer un code de ticket unique (ex: TICK-8429)
+        const codeTicket = `TICK-${Math.floor(1000 + Math.random() * 9000)}`;
+
+        // 3. Insérer dans la table 'tickets'
+        const sqlTicket = "INSERT INTO tickets (id_reservation, code_ticket, id_responsable, date_emission) VALUES (?, ?, ?, NOW())";
+        
+        db.query(sqlTicket, [id_reservation, codeTicket, id_responsable], (err, ticketResult) => {
+            if (err) return res.status(500).json({ error: err.message });
+
+            res.json({ 
+                message: "Réservation validée et Ticket généré !", 
+                code_ticket: codeTicket 
+            });
+        });
+    });
+});
+
+// ROUTE : Déclarer un incident (Point 13 du sujet)
+app.post('/incident', (req, res) => {
+    const { id_ticket, description_incident, type_materiel_touche } = req.body;
+
+    const sql = `
+        INSERT INTO incidents (id_ticket, description_incident, type_materiel_touche, date_declaration, statut_reparation) 
+        VALUES (?, ?, ?, NOW(), 'en_attente')
+    `;
+
+    db.query(sql, [id_ticket, description_incident, type_materiel_touche], (err, result) => {
+        if (err) {
+            console.error("Erreur SQL incident:", err);
+            return res.status(500).json({ error: "Erreur lors de l'enregistrement de l'incident" });
+        }
+        res.json({ 
+            message: "Incident déclaré avec succès", 
+            id_incident: result.insertId 
+        });
+    });
+});
+
+// ROUTE : Liste des incidents pour le Responsable
+app.get('/incidents-liste', (req, res) => {
+    const sql = "SELECT * FROM incidents ORDER BY date_declaration DESC";
+    
+    db.query(sql, (err, results) => {
+        if (err) return res.status(500).json({ error: err.message });
+        res.json(results);
+    });
+});
