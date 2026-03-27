@@ -13,7 +13,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
+/*a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
@@ -64,5 +64,229 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
-  }
+  }*/
+
+
+
+  /* ----- RESET ----- */
+
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    background: #fff;
+}
+
+/* ----- HEADER ----- */
+header {
+    background: #1f1f3d;
+    color: white;
+    padding: 20px 0;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+nav a:hover {
+    color: #a259ff;
+}
+
+/* ----- HERO ----- */
+.hero {
+    background: linear-gradient(rgba(30, 0, 50, 0.6), rgba(30, 0, 50, 0.6)), url('https://via.placeholder.com/1200x600') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+}
+.hero h4 {
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+.hero h1 {
+    font-size: 3em;
+    margin: 20px 0;
+}
+.hero p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+.btn {
+    display: inline-block;
+    background: #a259ff;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.btn:hover {
+    background: #7a1fff;
+}
+
+/* ----- ABOUT ----- */
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 10%;
+    flex-wrap: wrap;
+}
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+.about-text h2 {
+    color: #1f1f3d;
+    margin-bottom: 20px;
+}
+.about-text ul {
+    list-style: none;
+    margin: 20px 0;
+}
+.about-text ul li {
+    margin-bottom: 10px;
+}
+.about-img {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+    margin-top: 40px;
+}
+.about-img img {
+    width: 90%;
+    border-radius: 8px;
+}
+
+/* ----- SERVICES ----- */
+.services {
+    background: #f5f5ff;
+    padding: 80px 10%;
+    text-align: center;
+}
+.services h2 {
+    color: #1f1f3d;
+    margin-bottom: 40px;
+}
+.service-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+.service {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+.service h3 {
+    color: #a259ff;
+    margin-bottom: 10px;
+}
+
+/* ----- CONTACT ----- */
+.contact {
+    padding: 80px 10%;
+    text-align: center;
+}
+.contact form {
+    max-width: 500px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.contact input, .contact textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+.contact button {
+    background: #a259ff;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.contact button:hover {
+    background: #7a1fff;
+}
+
+/* ----- FOOTER ----- */
+footer {
+    background: #1f1f3d;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* ===================== SELECTEUR DE COMPTES ===================== */
+.account-overlay {
+    position: fixed;
+    inset: 0;
+    background: #202124;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.account-container {
+    background: #2d2f33;
+    padding: 30px;
+    border-radius: 12px;
+    width: 360px;
+    color: white;
+    text-align: center;
+}
+
+.account-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.account {
+    background: #3c4043;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.account img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.account-info {
+    margin-left: 10px;
+    text-align: left;
 }

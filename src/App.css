@@ -40,3 +40,89 @@
 .read-the-docs {
   color: #888;
 }
+
+
+
+
+body {
+  background: #202124;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.account-container {
+  background: #2d2f33;
+  border-radius: 12px;
+  padding: 30px;
+  width: 360px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+h1 {
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
+
+.account-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #3c4043;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.account:hover {
+  background: #5f6368;
+}
+
+.account img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.account-info {
+  flex: 1;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.account-info h3 {
+  margin: 0;
+  font-size: 1em;
+  color: #fff;
+}
+.account-info p {
+  margin: 0;
+  font-size: 0.85em;
+  color: #ccc;
+}
+
+.add-account-btn {
+  background: #a259ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 0.9em;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.add-account-btn:hover {
+  background: #7a1fff;
+}

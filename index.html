@@ -1,13 +1,106 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>gestiondeslaboratoires</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="./src/index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gestiondeslaboratoires</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+
+ 
+
+<!-- ===================== SITE PRINCIPAL ===================== -->
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo"> GESTION DES LABORATOIRES</div>
+      <nav>
+        <ul>
+          <li><a href="#home"> Accueil</a></li>
+          <li><a href="#about"> A propos</a></li>
+          <li><a href="#services"> Services</li>
+          <li><a href="#contact"> Contact</a></li>
+          <li><a href="./src/Connexion.html"> compte</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+
+  <!-- Hero Section-->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h4> EXPERIENCEZ LA MEILLEUR GESTION</h4>
+      <h1> GESTION DES LABORATOIRES</h1>
+      <p> Une plate_forme pour éviter les collisions entre les résevations
+        des professeurs et optimiser la gestiondes laboratoires.</p>
+      <a href="#about" class="btn"> EN SAVOIR PLUS</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-text">
+        <h2> Nous sommes votre partenaire d'innovation</h2>
+        <p> GESTION DES LABORATOIRES aide les établissements à planifier et gérer
+          leurs laboratoires de manière efficace. Notre solution réduit les conflits
+          d'horaires et améliore la productivité.</p>
+        <ul>
+          <li> ✅ Gestion simplifiée des réservations</li>
+          <li> ✅ Visualisation claire des crénaux disponibles</li>
+          <li> ✅ Interface intuitive pour professeur et administrateurs</li>
+        </ul>
+        <a href="#services" class="btn"> Découvrez nos services</a>
+      </div>
+      <div class="about-img">
+        <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-B2DmoaL67hfNrW0d5Xwd6hnTuey6U5QMiA&s/500*350" alt="Gestion des laboratoires">
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Nos Services</h2>
+            <div class="service-boxes">
+                <div class="service">
+                    <h3>Planification intelligente</h3>
+                    <p>Évitez les chevauchements de réservations avec un algorithme de détection automatique.</p>
+                </div>
+                <div class="service">
+                    <h3>Suivi des laboratoires</h3>
+                    <p>Visualisez en temps réel l’état d’occupation et les disponibilités de chaque salle.</p>
+                </div>
+                <div class="service">
+                    <h3>Rapports & statistiques</h3>
+                    <p>Analysez l’utilisation des laboratoires et optimisez la gestion de vos ressources.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+       <!-- Contact Section -->
+    <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <form id="contactForm">
+        <input type="text" placeholder="Nom" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Message" required></textarea>
+        <button class="btn">Envoyer</button>
+    </form>
+</section>
+        <p>© 2025 GESTION DES LABORATOIRES — Tous droits réservés</p>
+    </footer>
+
+</body>
+
 </html>
